@@ -23,41 +23,83 @@
 
 <style>
     .node-border {
-        border: black 1px solid;
-        border-radius: 10px;
-        width: fit-content;
-        margin: 15px;
+        box-sizing: border-box;
+        min-width: 260px;
+        max-width: 360px;
+        margin: 16px;
+        padding: 16px 18px;
+        border: 1px solid #d8dee8;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+        color: #182230;
+        transition:
+            transform 160ms ease,
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+    }
+
+    .node-border:hover {
+        transform: translateY(-2px);
+        border-color: #9aa8bc;
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .node-title,
+    .node-infor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
     }
 
     .node-title {
-        align-items: flex-end;
+        margin-bottom: 12px;
     }
 
     .node-infor {
-        justify-content: space-between;
+        margin-top: 12px;
+        color: #667085;
+        font-size: 13px;
+        line-height: 1.4;
     }
 
     hr {
-        margin: 0px;
-    }
-
-    .node-title-name {
-        font-size: 30px;
-    }
-
-    .node-infor,
-    .node-title {
-        display: flex;
-        gap: 20px;
+        height: 1px;
+        margin: 0;
+        border: 0;
+        background: #edf1f7;
     }
 
     .node-title-name,
     .node-infor-author,
     .node-infor-time,
     .node-title-status {
-        padding: 0px;
-        margin: 5px;
+        padding: 0;
+        margin: 0;
     }
 
+    .node-title-name {
+        overflow-wrap: anywhere;
+        color: #101828;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
 
+    .node-title-status {
+        flex: 0 0 auto;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #f2f6ff;
+        color: #3154a3;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    .node-infor-author {
+        font-weight: 600;
+    }
 </style>
