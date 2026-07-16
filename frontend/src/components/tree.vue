@@ -1,6 +1,7 @@
 <template>
     <div class="tree-border">
         <button @click="addNode"> add node </button>
+        <button @click="delNode"> delete node </button>
 
         <node v-for="node in nodeList" :key="node.name" :node="node"/>
     </div>
@@ -21,6 +22,10 @@
         }
 
         nodeList.value.push(newNode)
+    }
+
+    function delNode() {
+        nodeList.value.pop()
     }
 </script>
 
