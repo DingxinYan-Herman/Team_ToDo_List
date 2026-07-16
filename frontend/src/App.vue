@@ -1,7 +1,7 @@
 <script setup>
-import node from './components/node.vue'
+    import tree from './components/tree.vue'
 </script>
 
 <template>
-  <node />
+    <tree />
 </template>

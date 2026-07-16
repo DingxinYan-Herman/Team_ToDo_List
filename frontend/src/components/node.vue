@@ -1,25 +1,23 @@
 <template>
     <div class="node-border">
         <div class="node-title">
-            <p class="node-title-name"> {{ nodeInfor.name }} </p>
-            <p class="node-title-status"> {{ nodeInfor.finished }} </p>
+            <p class="node-title-name"> {{ node.name }} </p>
+            <p class="node-title-status"> {{ node.finished }} </p>
         </div>
         <hr>
         <div class="node-infor">
-            <p class="node-infor-time"> {{ nodeInfor.time }} </p>
-            <p class="node-infor-author"> {{ nodeInfor.author }} </p>
+            <p class="node-infor-time"> {{ node.time }} </p>
+            <p class="node-infor-author"> {{ node.author }} </p>
         </div>
     </div>
 </template>
 
 <script setup>
-    import { reactive } from 'vue'
-
-    const nodeInfor = reactive({
-        name: 'Task Name',
-        author: 'Herman',
-        time: '2026-07-14',
-        finished: false
+    const props = defineProps({
+        node: {
+            type: Object,
+            required: true
+        }
     })
 </script>
 
@@ -28,6 +26,7 @@
         border: black 1px solid;
         border-radius: 10px;
         width: fit-content;
+        margin: 15px;
     }
 
     .node-title {
