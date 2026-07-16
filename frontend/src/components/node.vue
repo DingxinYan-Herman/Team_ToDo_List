@@ -1,8 +1,8 @@
 <template>
-    <div class="node-border">
+    <div class="node-border" @click="switchStatus">
         <div class="node-title">
             <p class="node-title-name"> {{ node.name }} </p>
-            <p class="node-title-status"> {{ node.finished }} </p>
+            <p class="node-title-status" :class="node.finished ? 'status-finished' : 'status-unfinished'"> {{ node.finished ? 'finished' : 'unfinished' }} </p>
         </div>
         <hr>
         <div class="node-infor">
@@ -19,6 +19,10 @@
             required: true
         }
     })
+
+    function switchStatus() {
+        props.node.finished = !props.node.finished
+    }
 </script>
 
 <style>
@@ -91,12 +95,21 @@
         flex: 0 0 auto;
         padding: 4px 10px;
         border-radius: 999px;
-        background: #f2f6ff;
-        color: #3154a3;
+        color: #ffffff;
         font-size: 12px;
         font-weight: 700;
         line-height: 1.2;
         text-transform: uppercase;
+    }
+
+    .status-finished {
+        background: green;
+        color: white;
+    }
+
+    .status-unfinished {
+        background: red;
+        color: white;
     }
 
     .node-infor-author {
