@@ -1,8 +1,8 @@
 <template>
-    <div class="node-border" @click="switchStatus">
+    <div class="node-border">
         <div class="node-title">
             <p class="node-title-name"> {{ node.name }} </p>
-            <p class="node-title-status" :class="node.finished ? 'status-finished' : 'status-unfinished'"> {{ node.finished ? 'finished' : 'unfinished' }} </p>
+            <p class="node-title-status" :class="node.finished ? 'status-finished' : 'status-unfinished'" @click="switchStatus"> {{ node.finished ? 'finished' : 'unfinished' }} </p>
         </div>
         <hr>
         <div class="node-infor">
