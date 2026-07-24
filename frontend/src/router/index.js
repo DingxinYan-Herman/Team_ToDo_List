@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import tree from '../components/tree.vue'
+import home from '../components/page/home.vue'
 
 const routes = [
     {
         path:'/',
-        redirect: '/tree'
+        redirect: '/home'
     },
     {
-        path: '/tree',
-        name: 'tree',
-        component: tree
+        path: '/home',
+        name: 'home',
+        component: home
     }
 ]
 
