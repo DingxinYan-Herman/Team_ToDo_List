@@ -50,56 +50,67 @@
     .sidebar {
         width: clamp(200px, 18dvw, 280px);
         height: 100dvh;
+        padding: 12px;
         overflow: hidden;
-        border-right: 1px solid $color-text-primary;
+        border-right: 1px solid rgba(238, 238, 238, 0.16);
         display: flex;
         flex-direction: column;
     }
 
     .sidebar-title {
-        margin-top:5%;
-        margin-left:5%;
+        padding: 10px 8px 14px;
         font-size: $font-size-title;
+        line-height: 1.2;
     }
 
     .sidebar-function {
         display: flex;
         flex-direction: column;
-        margin-top: 4%;
+        gap: 4px;
         flex-shrink: 0;
     
         .sidebar-function-title {
-            margin-top:5%;
-            margin-left:5%;
-            font-size: $font-size-lg;
+            padding: 10px 8px 6px;
+            font-size: $font-size-sm;
+            color: rgba(238, 238, 238, 0.64);
+            letter-spacing: 0;
         }
 
         button {
-            width: 80%;
-            margin-top: 2%;
-            margin-left: 10%;
-            background-color: $color-bg-page;
+            width: 100%;
+            min-height: 34px;
+            padding: 8px 10px;
+            border: 0;
+            border-radius: 8px;
+            background-color: transparent;
             color: $color-text-primary;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(238, 238, 238, 0.1);
         }
     }
 
     .sidebar-project {
         display: flex;
         flex-direction: column;
-        margin-top: 4%;
+        margin-top: 10px;
         flex: 1;
         min-height: 0;
 
         .sidebar-project-title {
-            margin-top:5%;
-            margin-left:5%;
-            font-size: $font-size-lg;
+            padding: 10px 8px 6px;
+            font-size: $font-size-sm;
+            color: rgba(238, 238, 238, 0.64);
             flex-shrink: 0;
         }
         
         .sidebar-project-list {
-            margin-top: 5%;
-            margin-left: 10%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
             overflow-y: auto;
             min-height: 0;
             scrollbar-color: #050505 transparent;
@@ -120,26 +131,42 @@
         }
 
         .sidebar-project-item {
-            margin-top: 5%;
-            margin-left: 5%;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: $font-size-sm;
+            line-height: 1.25;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sidebar-project-item:hover {
+            background-color: rgba(238, 238, 238, 0.1);
         }
     }
 
     .sidebar-user {
         display: flex;
         align-items: center;
-        gap: 4%;
+        gap: 10px;
         flex-shrink: 0;
-        margin: 4% 5%;
-        padding: 4%;
-        border-top: 1px solid rgba(238, 238, 238, 0.24);
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        border-top: 1px solid rgba(238, 238, 238, 0.12);
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(238, 238, 238, 0.1);
+        }
 
         .sidebar-user-avatar {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             flex-shrink: 0;
             border-radius: 50%;
             background-color: $color-text-primary;
@@ -155,11 +182,16 @@
         .sidebar-user-name {
             font-size: $font-size-sm;
             font-weight: 700;
+            line-height: 1.25;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .sidebar-user-email {
-            margin-top: 2%;
+            margin-top: 2px;
             font-size: $font-size-xs;
+            line-height: 1.2;
             opacity: 0.72;
             overflow: hidden;
             text-overflow: ellipsis;

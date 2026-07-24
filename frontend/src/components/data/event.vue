@@ -26,27 +26,25 @@
 </script>
 
 <style scoped lang="scss">
+    @import '../../style.scss';
+
     .node-border {
-        box-sizing: border-box;
         min-width: 260px;
         max-width: 360px;
-        margin: 16px;
-        padding: 16px 18px;
-        border: 1px solid #d8dee8;
+        margin: 12px;
+        padding: 12px;
+        border: 1px solid rgba(238, 238, 238, 0.14);
         border-radius: 8px;
-        background: #ffffff;
-        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
-        color: #182230;
+        background: rgba(238, 238, 238, 0.04);
+        color: $color-text-primary;
         transition:
-            transform 160ms ease,
-            border-color 160ms ease,
-            box-shadow 160ms ease;
+            background-color 160ms ease,
+            border-color 160ms ease;
     }
 
     .node-border:hover {
-        transform: translateY(-2px);
-        border-color: #9aa8bc;
-        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+        border-color: rgba(238, 238, 238, 0.24);
+        background: rgba(238, 238, 238, 0.1);
     }
 
     .node-title,
@@ -58,13 +56,13 @@
     }
 
     .node-title {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     .node-infor {
-        margin-top: 12px;
-        color: #667085;
-        font-size: 13px;
+        margin-top: 10px;
+        color: rgba(238, 238, 238, 0.64);
+        font-size: $font-size-xs;
         line-height: 1.4;
     }
 
@@ -72,7 +70,7 @@
         height: 1px;
         margin: 0;
         border: 0;
-        background: #edf1f7;
+        background: rgba(238, 238, 238, 0.12);
     }
 
     .node-title-name,
@@ -85,31 +83,33 @@
 
     .node-title-name {
         overflow-wrap: anywhere;
-        color: #101828;
-        font-size: 22px;
+        color: $color-text-primary;
+        font-size: $font-size-lg;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.25;
     }
 
     .node-title-status {
         flex: 0 0 auto;
-        padding: 4px 10px;
+        padding: 5px 10px;
         border-radius: 999px;
-        color: #ffffff;
-        font-size: 12px;
+        font-size: $font-size-xs;
         font-weight: 700;
         line-height: 1.2;
-        text-transform: uppercase;
+        cursor: pointer;
+        transition:
+            background-color 160ms ease,
+            color 160ms ease;
     }
 
     .status-finished {
-        background: green;
-        color: white;
+        background: rgba(34, 197, 94, 0.18);
+        color: #86efac;
     }
 
     .status-unfinished {
-        background: red;
-        color: white;
+        background: rgba(248, 113, 113, 0.16);
+        color: #fca5a5;
     }
 
     .node-infor-author {
